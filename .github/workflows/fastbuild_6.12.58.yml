@@ -1,12 +1,12 @@
-name: 6.12.38 欧加真OKI内核快速构建
+name: 6.12.58 欧加真OKI内核快速构建
 
 env:
   TZ: Asia/Shanghai
   ANDROID_VERSION: 'android16'
   KERNEL_VERSION: '6.12'
-  SUB_VERSION: '38'
+  SUB_VERSION: '58'
   KERNEL_NAME: 'android16-5-g8c67d4274c0a-ab14275539-4k'
-  CCACHE_KEY: ccache-ecsv4-6.12.38
+  CCACHE_KEY: ccache-ecsv4-6.12.58
 
 on:
   workflow_dispatch:
@@ -130,9 +130,9 @@ jobs:
           rm -f ./ccache &
           
           echo "正在克隆源码仓库..."
-          aria2c -s16 -x16 -k1M https://github.com/cctv18/android_kernel_common_oneplus_sm8845/archive/refs/heads/oneplus/sm8845_b_16.0.0_ace_6t.zip -o common.zip && 
+          aria2c -s16 -x16 -k1M https://github.com/cctv18/android_kernel_common_oneplus_sm8850/archive/refs/heads/oneplus/sm8850_b_16.0_pad_3_pro.zip -o common.zip && 
           unzip -q common.zip && 
-          mv "android_kernel_common_oneplus_sm8845-oneplus-sm8845_b_16.0.0_ace_6t" common &&
+          mv "android_kernel_common_oneplus_sm8850-oneplus-sm8850_b_16.0_pad_3_pro" common &&
           rm -rf common.zip &
           
           echo "正在克隆llvm-clang19工具链..." &&
